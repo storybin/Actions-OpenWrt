@@ -4,8 +4,5 @@
 uci set network.lan.ipaddr='192.168.2.1'
 uci commit network
 
-# 2. 设置 root 默认密码为 '12361236'
-echo 'root:12361236' | chpasswd
-
 # 确保所有 uci-defaults 脚本都以 exit 0 结尾，以便执行后被正确删除
 exit 0
