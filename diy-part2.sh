@@ -11,10 +11,10 @@
 #
 
 # 修改默认IP
-sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/luci2/bin/config_generat
+# sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/luci2/bin/config_generat
 
 # 修改默认主题
 # sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
 # 修改主机名
-sed -i 's/LEDE/L/g' package/base-files/luci2/bin/config_generat
+# sed -i 's/LEDE/L/g' package/base-files/luci2/bin/config_generat
