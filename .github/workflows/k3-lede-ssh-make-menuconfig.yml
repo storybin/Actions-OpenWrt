@@ -42,13 +42,13 @@ jobs:
     steps:
 
       - name: Checkout coolsnowwolf/lede
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: coolsnowwolf/lede
           ref: master    
 
       - name: Checkout myconfig
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           ref: main
           path: myconfig
