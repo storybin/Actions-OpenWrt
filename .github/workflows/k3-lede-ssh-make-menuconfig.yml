@@ -148,28 +148,28 @@ jobs:
 
       - name: Deliver buildinfo
         if: github.event.inputs.ssh == 'false'
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: OpenWrt_buildinfo
           path: ./artifact/buildinfo/
 
       - name: Deliver package
         if: github.event.inputs.ssh == 'false'
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: OpenWrt_package
           path: ./artifact/package/
 
       - name: Deliver firmware
         if: github.event.inputs.ssh == 'false'
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: OpenWrt_firmware
           path: ./bin/targets/
 
       - name: Upload release asset
         if: (github.event == 'release' && github.event.inputs.ssh == 'false')
-        uses: svenstaro/upload-release-action@v2
+        uses: svenstaro/upload-release-action@v4
         with:
           repo_token: ${{ secrets.YOURTOKEN }}
           file: ./artifact/firmware/*
