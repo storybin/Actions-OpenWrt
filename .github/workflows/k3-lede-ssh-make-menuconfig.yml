@@ -42,13 +42,13 @@ jobs:
     steps:
 
       - name: Checkout coolsnowwolf/lede
-        uses: actions/checkout@v4
+        uses: actions/checkout@main
         with:
           repository: coolsnowwolf/lede
           ref: master    
 
       - name: Checkout myconfig
-        uses: actions/checkout@v4
+        uses: actions/checkout@main
         with:
           ref: main
           path: myconfig
@@ -92,7 +92,7 @@ jobs:
 
       - name: Commit update .config
         if: github.event.inputs.ssh == 'true'
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@main
         with:
           commit_message: 'feat: auto update .config'
           repository: ./myconfig
@@ -148,28 +148,28 @@ jobs:
 
       - name: Deliver buildinfo
         if: github.event.inputs.ssh == 'false'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@main
         with:
           name: OpenWrt_buildinfo
           path: ./artifact/buildinfo/
 
       - name: Deliver package
         if: github.event.inputs.ssh == 'false'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@main
         with:
           name: OpenWrt_package
           path: ./artifact/package/
 
       - name: Deliver firmware
         if: github.event.inputs.ssh == 'false'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@main
         with:
           name: OpenWrt_firmware
           path: ./bin/targets/
 
       - name: Upload release asset
         if: (github.event == 'release' && github.event.inputs.ssh == 'false')
-        uses: svenstaro/upload-release-action@v4
+        uses: svenstaro/upload-release-action@main
         with:
           repo_token: ${{ secrets.YOURTOKEN }}
           file: ./artifact/firmware/*
