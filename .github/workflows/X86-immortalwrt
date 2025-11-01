@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: lede_X86
+name: immortalwrt-X86
 
 on:
   repository_dispatch:
