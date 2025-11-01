@@ -84,8 +84,8 @@ jobs:
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
 
-    - name: 给扩容脚本添加执行权限
-      run: chmod +x files/etc/init.d/auto_resize
+    #- name: 给扩容脚本添加执行权限
+      #run: chmod +x files/etc/init.d/auto_resize
 
     - name: Load custom configuration
       run: |
